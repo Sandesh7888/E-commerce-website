@@ -108,9 +108,13 @@ nav ul li a:hover {
 
 /* Main container */
 #container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -124,6 +128,8 @@ nav ul li a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
+  max-width: 22em;
+ 
   /* justify-content: end; */
   flex-direction: column;
   align-items: center;
@@ -136,8 +142,8 @@ nav ul li a:hover {
 
 /* Product Image */
 .card img {
-  width: 100%;
-  height: 180px;
+  width: 20rem;
+  height: 18rem;
   object-fit: cover;
   border-radius: 8px;
   background:radial-gradient(circle at  top right  , #ffffff, #5376ff, #f0f0f0);
