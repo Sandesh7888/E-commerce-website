@@ -59,7 +59,7 @@ function viewMore(productId){
     console.log(productId);
     localStorage.setItem("productId",productId)
     window.location.href="/ViewMore.html"
-    DisplayCard();
+    // DisplayCard();
     
 
 }

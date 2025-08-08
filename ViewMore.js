@@ -4,41 +4,55 @@ let productId = JSON.parse(localStorage.getItem("productId")) || null;
 console.log(products);
 console.log(productId);
 
-// Correctly filter the product by ID
-let productData = products.filter((v) => v.id == productId);
-console.log(productData);
-
-// Select container
 let productDetails = document.querySelector(".productDetails");
 
-// Display card
-function DisplayCard() {
-  let output = "";
-
-  productData.forEach((product) => {
-    output += `
-      <div class="card">
+if (productId && products) {
+  let selectProduct = products.find((v) => {
+    return v.id == productId;
+  });
+  console.log(selectProduct);
+  if (selectProduct) {
+    productDetails.innerHTML = `<div class="card">
         <div class="card-inner">
           <div class="img-container">
-            <img src="${product.thumbnail}" alt="${product.title}">
+            <img src="${selectProduct.thumbnail}" alt="${selectProduct.title}">
           </div>
           <div class="card-body">
-            <h5 class="card-title">${product.title}</h5>
-            <p class="card-text">${product.description}</p>
-            <p class="card-text"><b>Price</b> : $${product.price}</p>
-            <p class="card-text"><b>Brand</b> : ${product.brand}</p>
-            <p class="card-text"><b>rating</b> : ${product.rating}</p>
-            <p class="card-text"><b>discount Percentage</b> : ${product.discountPercentage}%</p>
-            <p class="card-text"><b>warranty </b> : ${product.warrantyInformation}</p>
-            <p class="card-text"><b>return Policy</b> : ${product.returnPolicy}</p>
-            <button >Add Card</button>
+            <h5 class="card-title">${selectProduct.title}</h5><br>
+            <p class="card-text"><b>Brand</b> : ${selectProduct.brand}</p><br>
+            <p class="card-text"><b>Bategory</b> : ${
+              selectProduct.category
+            }</p><br>
+            <p class="card-text">${selectProduct.description}</p><br>
+            <p class="card-text"><b>Price</b> : <span >$${
+              selectProduct.price
+            }</span> </p>
+            
+            <button id="btnA"  >Add to Cart</button> <button id="btnB">Back to Home</button>
           </div>
         </div>
+        <div class="reviews">
+           <h1>Customer reviews</h1><hr>
+           ${selectProduct.reviews.map(
+             (review) => `ratings :${"❤️".repeat(review.rating)}
+           ${"🖤".repeat(5 - review.rating)}</div>
+           
+           <p>${review.comment}</p>
+           <p id="name>By <strong>${review.reviewerName} on $${new Date(
+               review.date
+             )}</strong></p> <hr>
+           
+           `
+           )}
+
+
+
+
+        </div>
       </div>`;
-  });
-
-  productDetails.innerHTML = output;
+  } else {
+    productDetails.innerHTML = "Product Not Found";
+  }
+} else {
+  console.log("Product not found");
 }
-
-
-DisplayCard();
