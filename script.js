@@ -63,4 +63,8 @@ function viewMore(productId){
     
 
 }
-    
+
+document.getElementById("cartIcon").addEventListener("click", () => {
+  window.location.href="/Cart.html";
+});
+

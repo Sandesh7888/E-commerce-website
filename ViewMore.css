@@ -52,6 +52,15 @@ nav ul li a:hover {
   color: red;
 }
 
+.cart {
+  position: relative;
+}
+
+#cartIcon {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
 
 
 /* Responsive */
@@ -80,6 +89,7 @@ nav ul li a:hover {
   background: transparent;
   /* width: 100vw; */
   /* height: 100vh; */
+  padding: 20px;
   
   
 }
@@ -130,7 +140,7 @@ nav ul li a:hover {
 }
 
 .card-text {
-  margin: 5px 0;
+  margin: 10px 0;
   font-size: 1.2rem;
   color: #000000;
   font-family: 'Roboto', sans-serif;
