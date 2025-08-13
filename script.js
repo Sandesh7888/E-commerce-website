@@ -58,13 +58,13 @@ document.getElementById("searchProduct").addEventListener('input', function sear
 function viewMore(productId){
     console.log(productId);
     localStorage.setItem("productId",productId)
-    window.location.href="/ViewMore.html"
+    window.location.href="./ViewMore.html"
     // DisplayCard();
     
 
 }
 
 document.getElementById("cartIcon").addEventListener("click", () => {
-  window.location.href="/Cart.html";
+  window.location.href="./Cart.html";
 });
 

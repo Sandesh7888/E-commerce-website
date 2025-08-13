@@ -63,5 +63,5 @@ function addToCart(product) {
 
 }
 document.getElementById("cartIcon").addEventListener("click", () => {
-  window.location.href="/Cart.html";
+  window.location.href="./Cart.html";
 });
