@@ -8,7 +8,7 @@ function displayCart() {
   cartContent.innerHTML = "";
   if (cart.length === 0) {
     cartContent.innerHTML = "<p>Your cart is empty.</p>";
-    totalPrice.innerHTML = "";
+    totalPrice.innerHTML = "<h2>Total Price: Rs. 0</h2>";
   } else {
     let totalBill = 0;
     cart.forEach((product, i) => {
@@ -35,7 +35,9 @@ function displayCart() {
             `;
       cartContent.appendChild(Elem);
     });
-    totalPrice.innerHTML = `<h2>Total Price: Rs. ${Math.round(totalBill)}</h2>`;
+    if (cart.length > 0) {
+      totalPrice.innerHTML = `<h2>Total Price: Rs. ${Math.round(totalBill)}</h2>`;
+    }
   }
 }
 function removeFromCart(i) {
