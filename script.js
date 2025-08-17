@@ -137,3 +137,28 @@ sortSelect.addEventListener("change", () => {
   currentPage = 1;
   renderPage();
 });
+
+
+
+
+
+
+
+  // Show/Hide button on scroll
+  window.addEventListener("scroll", function () {
+    const backToTop = document.querySelector(".back-to-top");
+    if (window.scrollY > 200) { 
+      backToTop.style.display = "block"; 
+    } else {
+      backToTop.style.display = "none"; 
+    }
+  });
+
+  // Scroll to top when clicked
+  document.querySelector(".back-to-top a").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });

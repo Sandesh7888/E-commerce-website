@@ -27,7 +27,6 @@ header {
 nav {
   
   top: 0;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -261,4 +260,86 @@ body {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
+
+
+
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff9800; /* hover color */
+}
+
+.footer-links {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: #ddd;
+  margin: 0 12px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff9800;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* hidden by default */
+  z-index: 1000;
+}
+
+.back-to-top a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.back-to-top a:hover {
+  background: #e68900;
+  transform: translateY(-3px);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 
